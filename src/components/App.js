@@ -6,7 +6,7 @@ const App = () => {
   const [data, setData] = useState([
     {
       id: 1,
-      name: "dav",
+      name: "Ram",
       age: 23,
     },
     {
@@ -63,39 +63,45 @@ const App = () => {
     <div>
       {/* Do not remove the main div */}
       <h2>Track edited cells to log updates for future</h2>
-      <table>
-        <thead>
-          <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Age</td>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row) => (
-            <tr key={row.id}>
-              <td>{row.id}</td>
-              <td>
-                <input
-                  type="text"
-                  defaultValue={row.name}
-                  name="name"
-                  onChange={(e) => handleChange(row.id, "name", e.target.value)}
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  defaultValue={row.age}
-                  name="age"
-                  onChange={(e) => handleChange(row.id, "age", e.target.value)}
-                />
-              </td>
+      <form onSubmit={handleSave}>
+        <table>
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Age</td>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <button onClick={handleSave}>Save changes</button>
+          </thead>
+          <tbody>
+            {data.map((row) => (
+              <tr key={row.id}>
+                <td>{row.id}</td>
+                <td>
+                  <input
+                    type="text"
+                    defaultValue={row.name}
+                    name="name"
+                    onChange={(e) =>
+                      handleChange(row.id, "name", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    defaultValue={row.age}
+                    name="age"
+                    onChange={(e) =>
+                      handleChange(row.id, "age", e.target.value)
+                    }
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button type="submit">Save changes</button>
+      </form>
     </div>
   );
 };
