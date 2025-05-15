@@ -7,7 +7,7 @@ const App = () => {
     {
       id: 1,
       name: "Ram",
-      age: 23,
+      age: 25,
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ const App = () => {
     <div>
       {/* Do not remove the main div */}
       <h2>Track edited cells to log updates for future</h2>
-      <form onSubmit={handleSave}>
+      <form>
         <table>
           <thead>
             <tr>
@@ -100,7 +100,9 @@ const App = () => {
             ))}
           </tbody>
         </table>
-        <button type="submit">Save changes</button>
+        <button type="submit" onClick={handleSave}>
+          Save changes
+        </button>
       </form>
     </div>
   );
