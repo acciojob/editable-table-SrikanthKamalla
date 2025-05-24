@@ -27,7 +27,7 @@ const App = () => {
     {
       id: 5,
       name: "Tavneet",
-      age: 47,
+      age: 50,
     },
     {
       id: 6,
@@ -47,7 +47,8 @@ const App = () => {
     editedDataRef.current[id][field] = value;
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     let updatedData = data.map((row) => {
       return editedDataRef.current[row.id]
         ? editedDataRef.current[row.id]
