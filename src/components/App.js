@@ -56,7 +56,7 @@ const App = () => {
     });
     setData(updatedData);
     arrRef.current = Object.keys(editedDataRef.current);
-    console.log(arrRef.current);
+    console.log("Edited Rows:", arrRef.current);
     arrRef.current = [];
     editedDataRef.current = {};
   };
