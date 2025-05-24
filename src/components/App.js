@@ -64,7 +64,7 @@ const App = () => {
     <div>
       {/* Do not remove the main div */}
       <h2>Track edited cells to log updates for future</h2>
-      <form>
+      <form onSubmit={handleSave}>
         <table>
           <thead>
             <tr>
@@ -101,9 +101,7 @@ const App = () => {
             ))}
           </tbody>
         </table>
-        <button type="submit" onClick={handleSave}>
-          Save changes
-        </button>
+        <button type="submit">Save changes</button>
       </form>
     </div>
   );
